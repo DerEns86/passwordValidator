@@ -67,4 +67,34 @@ public class PasswordTest {
 
     }
 
+    @Test
+    void returnTrueWhenPasswordContainsUpperAndLowercase() {
+        //Given
+        String password = "testUpperLowercase";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsUpperAndLowercase( password );
+
+        //When
+        boolean expected = true;
+        assertTrue( actual, String.valueOf(expected));
+
+    }
+
+    @Test
+    void returnFalseWhenPasswordNotContainsUpperAndLowercase() {
+        //Given
+        String password = "testupperlowercase";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsUpperAndLowercase( password );
+
+        //When
+        boolean expected = false;
+        assertFalse( actual, String.valueOf(expected));
+
+    }
+
 }
