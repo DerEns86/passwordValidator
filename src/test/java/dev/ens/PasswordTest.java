@@ -97,4 +97,33 @@ public class PasswordTest {
 
     }
 
+    @Test
+    void returnTrueWhenPasswordIsCommon() {
+        //Given
+        String password = "Password123";
+
+        //Then
+
+        boolean actual = Password.isPasswordCommon( password );
+
+        //When
+        boolean expected = true;
+        assertTrue( actual, String.valueOf(expected));
+
+    }
+
+    @Test
+    void returnFalseWhenPasswordIsNotCommon() {
+        //Given
+        String password = "PasswordTest";
+
+        //Then
+
+        boolean actual = Password.isPasswordCommon( password );
+
+        //When
+        boolean expected = false;
+        assertFalse( actual, String.valueOf(expected));
+    }
+
 }

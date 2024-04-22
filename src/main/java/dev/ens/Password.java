@@ -15,6 +15,16 @@ public class Password {
         // use regex to check if password contains upper and lowercase
         return password.matches(".*[A-Z].*");
     }
+
+    public static boolean isPasswordCommon( String password ) {
+
+        for(String commonPassword : CommonPasswords.commonPasswords) {
+            if(password.equals(commonPassword)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
