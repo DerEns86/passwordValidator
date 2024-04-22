@@ -10,6 +10,8 @@ public class Main {
         String password = scanner.nextLine();
         passwordValidator(password);
 
+        System.out.println(PasswordGenerator.generatePassword(10));
+
     }
 
 

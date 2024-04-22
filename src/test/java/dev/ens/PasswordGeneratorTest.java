@@ -1,21 +1,29 @@
 package dev.ens;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+
 
 public class PasswordGeneratorTest {
+
     @Test
-    void createStringWithLengthOfTen() {
-        //Given
-        int length = 10;
-
-        //Then
-
-        String actual = PasswordGenerator.generatePassword( length );
-
-        //When
-        String expected = "10";
-        assertEquals( expected, actual );
-
+    void testGeneratedPasswordIsNotNull() {
+        String password = PasswordGenerator.generatePassword(10);
+        assertNotNull(password);
     }
+
+    @Test
+    void testGeneratedPasswordHasCorrectLength() {
+        int length = 10;
+        String password = PasswordGenerator.generatePassword(length);
+        assertEquals(length, password.length());
+    }
+
+    @Test
+    void testGeneratedPasswordIsValid() {
+        String password = PasswordGenerator.generatePassword(10);
+        assertTrue(Password.isPasswordValid(password));
+    }
+
 }
