@@ -16,6 +16,11 @@ public class Password {
         return password.matches(".*[A-Z].*");
     }
 
+    public static boolean isPasswordContainsSpecialChars( String password ) {
+        // use regex to check if password contains special chars
+        return password.matches(".*[!@#$%&*()_+=|<>?{}\\\\[\\\\]~-].*");
+    }
+
     public static boolean isPasswordCommon( String password ) {
 
         for(String commonPassword : CommonPasswords.commonPasswords) {
@@ -25,11 +30,8 @@ public class Password {
         }
         return false;
     }
+
 }
 
 
 
-/*
-
-* public boolean isPasswordCommon ( String password )
-* */

@@ -68,6 +68,36 @@ public class PasswordTest {
     }
 
     @Test
+    void returnTrueWhenPasswordContainsSpecialChars() {
+        //Given
+        String password = "test@digit";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsSpecialChars( password );
+
+        //When
+        boolean expected = true;
+        assertTrue( actual, String.valueOf(expected));
+
+    }
+
+    @Test
+    void returnFalseWhenPasswordNotContainsSpecialChars() {
+        //Given
+        String password = "testDigit";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsSpecialChars( password );
+
+        //When
+        boolean expected = false;
+        assertFalse( actual, String.valueOf(expected));
+
+    }
+
+    @Test
     void returnTrueWhenPasswordContainsUpperAndLowercase() {
         //Given
         String password = "testUpperLowercase";
