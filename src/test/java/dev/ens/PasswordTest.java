@@ -156,4 +156,32 @@ public class PasswordTest {
         assertFalse( actual, String.valueOf(expected));
     }
 
+    @Test
+    void returnTrueWhenPasswordIsValid() {
+        //Given
+        String password = "Password@is1";
+
+        //Then
+
+        boolean actual = Password.isPasswordValid( password );
+
+        //When
+        boolean expected = true;
+        assertTrue( actual, String.valueOf(expected));
+    }
+
+    @Test
+    void returnFalseWhenPasswordIsNotValid() {
+        //Given
+        String password = "Passwordisnotvalid";
+
+        //Then
+
+        boolean actual = Password.isPasswordValid( password );
+
+        //When
+        boolean expected = false;
+        assertFalse( actual, String.valueOf(expected));
+    }
+
 }

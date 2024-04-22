@@ -31,6 +31,12 @@ public class Password {
         return false;
     }
 
+
+    public static boolean isPasswordValid(String password) {
+        return isPasswordLengthEightChars(password) && isPasswordContainsDigits(password)
+                && isPasswordContainsUpperAndLowercase(password) && isPasswordContainsSpecialChars(password)
+                && !isPasswordCommon(password);
+    }
 }
 
 
