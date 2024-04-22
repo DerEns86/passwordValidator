@@ -37,4 +37,34 @@ public class PasswordTest {
 
     }
 
+    @Test
+    void returnTrueWhenPasswordContainsDigits() {
+        //Given
+        String password = "test1digit";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsDigits( password );
+
+        //When
+        boolean expected = true;
+        assertTrue( actual, String.valueOf(expected));
+
+    }
+
+    @Test
+    void returnFalseWhenPasswordContainsNoDigits() {
+        //Given
+        String password = "testDigit";
+
+        //Then
+
+        boolean actual = Password.isPasswordContainsDigits( password );
+
+        //When
+        boolean expected = false;
+        assertFalse( actual, String.valueOf(expected));
+
+    }
+
 }
